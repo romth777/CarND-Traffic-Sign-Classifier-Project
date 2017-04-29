@@ -92,14 +92,15 @@ My final model consisted of the following layers:
 | Layer         		|     Description	        					|
 |:---------------------:|:---------------------------------------------:|
 | Input         		| 32x32x1 Gray image   							|
-| Convolution 3x3     	| 1x1 stride, valid padding, outputs 28x28x6 	|
+| Convolution 5x5     	| 1x1 stride, valid padding, outputs 28x28x6 	|
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 14x14x6 				|
-| Convolution 3x3     	| 2x2 stride, valid padding, outputs 10x10x16 	|
+| Convolution 5x5     	| 2x2 stride, valid padding, outputs 10x10x16 	|
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 5x5x16 				|
 | Fully connected		| inputs 400, outputs 120        									|
 | RELU					|												|
+| Dropout       | 50% drop |
 | Fully connected		| inputs 120, outputs 84        									|
 | RELU					|												|
 | Fully connected		| inputs 84, outputs 10        									|
@@ -112,7 +113,7 @@ The code for training the model is located in the eigth cell of the ipython note
 To train the model, I used setting below;
  * optimizer : Adam
  * batch size : 128
- * epochs : 10
+ * epochs : 50
  * learning rate : 0.001
  * loss : cross entropy
 
@@ -121,9 +122,9 @@ To train the model, I used setting below;
 The code for calculating the accuracy of the model is located in the ninth cell of the Ipython notebook.
 
 My final model results were:
-* training set accuracy of 0.87
-* validation set accuracy of 0.87
-* test set accuracy of 0.86
+* training set accuracy of 0.937
+* validation set accuracy of 0.932
+* test set accuracy of 0.905
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen:
